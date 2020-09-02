@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book market</title>
+       
+
+        <meta charset="UTF-8">
+        <meta name="description" content="Fashi Template">
+        <meta name="keywords" content="Fashi, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {{{_sections.css}}}
+    </head>
+    <body>
+        <div class="container">
+            <div class="row py-2">
+                <div class="col-md">
+                     {{> header}}
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md">
+                     {{> slide}}
+                </div>
+            </div>
+
+            {{{body}}}
+            
+            <div class="row py-2">
+                <div class="col-md">
+                     {{> footer}}
+                </div>
+            </div>
+        </div>
+        
+        {{{_sections.javascript}}} 
+    </body>
+</html>
