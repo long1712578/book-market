@@ -1,17 +1,15 @@
 
+      <br/>
       <div class="panel panel-default menu">
-        <h2 class="panel-heading" style="font-size: 20px; text-align: center; color: rgb(79, 15, 197);">Danh mục loại sách</h2>
-        </br>
+        <h2 class="panel-heading" style="font-size: 18px; text-align: center; color: rgb(79, 15, 197);">DANH MỤC SÁCH</h2>
         </br>
         <div class="panel-body">
           <div class="list-group text-center">
-            
-            {{!-- {{#each cats}}
-            <a href="/products/{{ma_so}}" class="list-group-item list-group-item-action {{#if isActive}} active{{/if}}">
-              {{name}}
+            {{#each cats}}
+            <a href="/sanpham/{{ma_so}}" class="list-group-item list-group-item-action {{#if isActive}} active{{/if}}">
+              {{ten}}
             </a>
-            {{/each}} --}}
-            {{!-- <a class="list-group-item list-group-item-action" href="/products" style="color: chartreuse;">Tất cả</a> --}}
+            {{/each}}
          </div>
         </div>
       </div>
