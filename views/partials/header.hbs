@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <a class="navbar-brand text-light justify-content-center" href="#">
-        <img src="./assets/image/slide1.jpg" width="30" height="30" class="d-inline-block align-top" alt="" />
+        <img src="../../assets/image/slide1.jpg" width="30" height="30" class="d-inline-block align-top" alt="" />
         book Auction
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -28,7 +28,7 @@
                 </div>
             </li>
         </ul>
-        <form action="/products/search" class="form-inline my-2 my-lg-0">
+        <form action="/sanpham/timkiem" class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
@@ -37,20 +37,17 @@
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-circle" aria-hidden="true"></i>
-                    Account
+                    {{!-- <i class="far fa-user-circle"></i> --}}
+                    Tài khoản
                 </a>
                 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    
-                    {{!-- <a class="dropdown-item text-dark" href="/createStore">Create store</a>
-                    <a class="dropdown-item text-dark" href="/signUpShip">Sign Up ship</a>
-                    <a class="dropdown-item text-dark" href="/signInShip">Sign In ship</a> --}}
-                    <a class="dropdown-item text-dark" href="/dangnhap">Sign in</a>
-                    <a class="dropdown-item text-success" href="/dangki">Sign up</a>
+                    <a class="dropdown-item text-dark" href="/dangnhap">Đăng nhập</a>
+                    <a class="dropdown-item text-success" href="/dangki">Đăng xuất</a>
 
                 </div>
             </li>
-            <a class="nav-link text-light" onclick="location.href='/cart'"  aria-disabled="true">
+            <a class="nav-link text-light" onclick="location.href='/giohang'"  aria-disabled="true">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="nav-shop_circle" id="cart-badge"> {{totalQuantity}}</span>
             </a>
         </ul>

@@ -7,4 +7,9 @@ module.exports={
         const rows=await db.load(sql);
         return rows;
     },
+    add: async cat => {
+        const id = db.add(tbCategory, cat);
+        return id;
+    },
+
 };

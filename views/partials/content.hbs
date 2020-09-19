@@ -31,26 +31,23 @@
                 </ul>
                 <ul class="list-unstyled list-inline d-flex justify-content-between mb-0">
                     <li class="list-inline-item mr-0">
-                        <div class="chip mr-0">Số lượng: {{so_luong}}</div>
+                        <div class="chip mr-0">Số lượng:{{so_luong}}  </div>
                     </li>
                     <li class="list-inline-item mr-0">
-                        <div class="chip mr-0">Giá tiền: {{gia_tien}}</div>
+                        <div class="chip mr-0">Giá tiền:{{gia_tien}}đ</div>
                     </li>
 
                 </ul>
                 <hr class="my-4">
-                <p class="lead"><strong>Tên sách</strong></p>
-                <ul class="list-unstyled list-inline d-flex justify-content-between mb-0">
-                    <li class="list-inline-item mr-0">
-                        <div class="chip mr-0" style="color: royalblue; "><b>{{ten_san_pham}}</b></div>
-                    </li>
-                    <li class="list-inline-item mr-0">
-                        <div class="chip mr-0">    </div>
-                    </li>
-
-                </ul>
+                <p class="lead"><b style="color: darkblue;">Tên sách</b></p>
+                <div class="chip mr-0" style="color: royalblue; "><i>{{ten_san_pham}}</i></div>
+                <br/>
                 <!-- Button -->
-                <a href="#" class="btn btn-success deep-purple-text p-1 mx-0 mb-0">Thêm vào giỏ</a>
+                {{!-- <a href="#" class="btn btn-success deep-purple-text p-1 mx-0 mb-0">Thêm vào giỏ</a> --}}
+                {{!-- <button class="add-to-cart btn btn-success" data-id="{{ma_so}}" type="submit" value="Submit"
+          style="display: block; margin-left: auto; margin-right: auto;">Thêm vào giỏ</button> --}}
+                <a href="/sanpham/ps/{{ma_so}}" class="btn btn-info deep-purple-text p-1 mx-0 mb-0" role="button">Xem chi
+            tiết</a>
                 <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top"
                     title="I like it"></i>
             </div>
@@ -114,6 +111,7 @@
 <div class="row cart-row">
     <div class="container mt-5 mb-5">
         <div class="owl-carousel owl-theme">
+            {{#each pslike}}
             <div class="ml-2 mr-2" style="background-color: rgb(209, 204, 204);">
                 <!-- Card -->
                 <div class="card booking-card">
@@ -121,7 +119,7 @@
                     <!-- Card image -->
                     <div class="view overlay">
                         <img class="card-img-top"
-                            src="https://salt.tikicdn.com/cache/280x280/media/catalog/product/2/d/2d-small.u547.d20160916.t154252.106247.jpg"
+                            src="{{hinh_anh}}"
                             alt="Card image cap">
                         <a href="#!">
                             <div class="mask rgba-white-slight"></div>
@@ -136,22 +134,22 @@
                         <!-- Data -->
                         <ul class="list-unstyled list-inline rating mb-0">
                             <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+                            {{!-- <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
                             <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
                             <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+                            <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li> --}}
                             <li class="list-inline-item">
                                 <p class="text-muted">4.5 (413)</p>
                             </li>
                         </ul>
                         <p>
-                            Số lượng: 50
+                            Số lượng: {{so_luong}}
                         </p>
                         <hr class="my-4">
                         <p class="lead"><strong>Giá</strong></p>
                         <ul class="list-unstyled list-inline d-flex justify-content-between mb-0">
                             <li class="list-inline-item mr-0">
-                                <div class="chip mr-0">Giá cũ: 50000đ</div>
+                                <div class="chip mr-0">Giá cũ: {{gia_tien}}đ</div>
                             </li>
                             <li class="list-inline-item mr-0">
                                 <div class="chip deep-purple white-text mr-0">Giá mới: 46000đ</div>
@@ -167,169 +165,7 @@
                 </div>
                 <!-- Card -->
             </div>
-
-            <div class="ml-2 mr-2" style="background-color: rgb(209, 204, 204);">
-                <!-- Card -->
-                <div class="card booking-card">
-
-                    <!-- Card image -->
-                    <div class="view overlay">
-                        <img class="card-img-top"
-                            src="https://salt.tikicdn.com/cache/280x280/ts/product/94/00/ff/9f48ea97b1059b21e11095cbd8db2af2.jpg"
-                            alt="Card image cap">
-                        <a href="#!">
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                        <!-- Title -->
-                        <h5 class="card-title font-weight-bold"><a>Đánh giá</a></h5>
-                        <!-- Data -->
-                        <ul class="list-unstyled list-inline rating mb-0">
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-                            <li class="list-inline-item">
-                                <p class="text-muted">4.5 (413)</p>
-                            </li>
-                        </ul>
-                        <p>
-                            Số lượng: 50
-                        </p>
-                        <hr class="my-4">
-                        <p class="lead"><strong>Giá</strong></p>
-                        <ul class="list-unstyled list-inline d-flex justify-content-between mb-0">
-                            <li class="list-inline-item mr-0">
-                                <div class="chip mr-0">Giá cũ: 50000đ</div>
-                            </li>
-                            <li class="list-inline-item mr-0">
-                                <div class="chip deep-purple white-text mr-0">Giá mới: 46000đ</div>
-                            </li>
-
-                        </ul>
-                        <!-- Button -->
-                        <a href="#" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">Thêm vào giỏ</a>
-                        <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip"
-                            data-placement="top" title="I like it"></i>
-                    </div>
-
-                </div>
-                <!-- Card -->
-            </div>
-
-            <div class="ml-2 mr-2" style="background-color: rgb(209, 204, 204);">
-                <!-- Card -->
-                <div class="card booking-card">
-
-                    <!-- Card image -->
-                    <div class="view overlay">
-                        <img class="card-img-top"
-                            src="https://salt.tikicdn.com/cache/280x280/media/catalog/product/l/a/lamdi.u547.d20160721.t153629.jpg"
-                            alt="Card image cap">
-                        <a href="#!">
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                        <!-- Title -->
-                        <h5 class="card-title font-weight-bold"><a>Đánh giá</a></h5>
-                        <!-- Data -->
-                        <ul class="list-unstyled list-inline rating mb-0">
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-                            <li class="list-inline-item">
-                                <p class="text-muted">4.5 (413)</p>
-                            </li>
-                        </ul>
-                        <p>
-                            Số lượng: 50
-                        </p>
-                        <hr class="my-4">
-                        <p class="lead"><strong>Giá</strong></p>
-                        <ul class="list-unstyled list-inline d-flex justify-content-between mb-0">
-                            <li class="list-inline-item mr-0">
-                                <div class="chip mr-0">Giá cũ: 50000đ</div>
-                            </li>
-                            <li class="list-inline-item mr-0">
-                                <div class="chip deep-purple white-text mr-0">Giá mới: 46000đ</div>
-                            </li>
-
-                        </ul>
-                        <!-- Button -->
-                        <a href="#" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">Thêm vào giỏ</a>
-                        <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip"
-                            data-placement="top" title="I like it"></i>
-                    </div>
-
-                </div>
-                <!-- Card -->
-            </div>
-
-            <div class="ml-2 mr-2" style="background-color: rgb(209, 204, 204);">
-                <!-- Card -->
-                <div class="card booking-card">
-
-                    <!-- Card image -->
-                    <div class="view overlay">
-                        <img class="card-img-top"
-                            src="https://salt.tikicdn.com/cache/280x280/ts/product/79/cb/7f/219f98e7f609290fd8a513fa25c41b17.jpg"
-                            alt="Card image cap">
-                        <a href="#!">
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                    <!-- Card content -->
-                    <div class="card-body">
-
-                        <!-- Title -->
-                        <h5 class="card-title font-weight-bold"><a>Đánh giá</a></h5>
-                        <!-- Data -->
-                        <ul class="list-unstyled list-inline rating mb-0">
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                            <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-                            <li class="list-inline-item">
-                                <p class="text-muted">4.5 (413)</p>
-                            </li>
-                        </ul>
-                        <p>
-                            Số lượng: 50
-                        </p>
-                        <hr class="my-4">
-                        <p class="lead"><strong>Giá</strong></p>
-                        <ul class="list-unstyled list-inline d-flex justify-content-between mb-0">
-                            <li class="list-inline-item mr-0">
-                                <div class="chip mr-0">Giá cũ: 50000đ</div>
-                            </li>
-                            <li class="list-inline-item mr-0">
-                                <div class="chip deep-purple white-text mr-0">Giá mới: 46000đ</div>
-                            </li>
-
-                        </ul>
-                        <!-- Button -->
-                        <a href="#" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">Thêm vào giỏ</a>
-                        <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip"
-                            data-placement="top" title="I like it"></i>
-                    </div>
-
-                </div>
-                <!-- Card -->
-            </div>
-
+            {{/each}}
         </div>
     </div>
 </div>

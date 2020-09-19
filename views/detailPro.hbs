@@ -1,0 +1,58 @@
+{{#section 'javascript'}}
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+{{!-- <script src="../../assets/js/jquery-3.3.1.min.js"></script> --}}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+{{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/owl.carousel.min.js"></script>
+<script src="../../assets/js/item.js"></script>
+{{/section}}
+
+{{#section 'css'}}
+<!-- CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{{!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> --}}
+<link rel="stylesheet" src="./assets/css/signin_style.css" />
+<link rel="stylesheet" src="./assets/fontawesome/css/all.css" />
+<link rel="stylesheet" src="./assets/fontawesome/css/all.min.css" />
+{{!-- <link rel="stylesheet" src="./assets/fontawesome/css/fontawesome.css" />
+<link rel="stylesheet" src="./assets/fontawesome/css/fontawesome.min.css" /> --}}
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/assets/owl.carousel.min.css" />
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/assets/owl.theme.default.min.css" />
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/assets/owl.theme.green.min.css" />
+
+{{/section}}
+
+{{#each proDetail}}
+<div class="wrapper">
+    <div class="product-img">
+        <img src="{{hinh_anh}}" height="420" width="327">
+    </div>
+    <div class="product-info">
+        <div class="product-text">
+            <h1>{{ten_san_pham}}</h1>
+            <h2>by studio and friends</h2>
+            <p>{{mo_ta}}<br> </p>
+            <p><span>{{gia_tien}} Đ</span></p>
+        </div>
+        </br>
+        <div class="product-price-btn">
+            <button class="add-to-cart" data-id="{{ma_so}}" type="submit" value="Submit"
+                style="display: block; margin-left: auto; margin-right: auto;">Thêm vào giỏ</button>
+        </div>
+        <p><a href="/sanpham" class="btn btn-primary btn-block view-product" role="button">Trở về</a></p>
+    </div>
+</div>
+</div>
+{{/each}}

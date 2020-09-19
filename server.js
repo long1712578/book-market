@@ -46,16 +46,18 @@ app.use(session({
 }));
 //Use cart controller
 //Init cart
-// let Cart=require('./models/cartM');
-// app.use((req,res,next)=>{
-//     var cart=new Cart(req.session.cart ? req.session.cart:{});
-//     req.session.cart=cart;
-//     res.locals.totalQuantity=cart.totalQuantity;
-//     next();
-// });
+let Cart=require('./models/cartM');
+app.use((req,res,next)=>{
+    var cart=new Cart(req.session.cart ? req.session.cart:{});
+    req.session.cart=cart;
+    res.locals.totalQuantity=cart.totalQuantity;
+    next();
+});
 app.use("/",require('./controller/signUpC'));
 app.use("/",require('./controller/signInC'));
 app.use("/",require('./controller/catsC'));
+app.use("/", require('./controller/cartC'));
+app.use("/",require('./controller/adminC'));
 
 app.set('port',3000);
 app.listen(app.get('port'),()=>{
