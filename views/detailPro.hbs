@@ -19,10 +19,10 @@
 <!-- CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-{{!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> --}}
-<link rel="stylesheet" src="./assets/css/signin_style.css" />
-<link rel="stylesheet" src="./assets/fontawesome/css/all.css" />
-<link rel="stylesheet" src="./assets/fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="../../assets/css/style.css" />
+<link rel="stylesheet" href="../../assets/css/signin_style.css" />
+<link rel="stylesheet" href="../../assets/fontawesome/css/all.css" />
+<link rel="stylesheet" href="../../assets/fontawesome/css/all.min.css" />
 {{!-- <link rel="stylesheet" src="./assets/fontawesome/css/fontawesome.css" />
 <link rel="stylesheet" src="./assets/fontawesome/css/fontawesome.min.css" /> --}}
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
@@ -31,11 +31,9 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/assets/owl.theme.default.min.css" />
 <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/assets/owl.theme.green.min.css" />
-
 {{/section}}
-
 {{#each proDetail}}
-<div class="wrapper">
+<section class="wrapper">
     <div class="product-img">
         <img src="{{hinh_anh}}" height="420" width="327">
     </div>
@@ -51,8 +49,8 @@
             <button class="add-to-cart" data-id="{{ma_so}}" type="submit" value="Submit"
                 style="display: block; margin-left: auto; margin-right: auto;">Thêm vào giỏ</button>
         </div>
-        <p><a href="/sanpham" class="btn btn-primary btn-block view-product" role="button">Trở về</a></p>
+        <a href="/sanpham" class="btn btn-primary btn-block view-product" role="button" style="border-radius: 50px;width: 100px;margin-left: auto;">Trở về</a>
     </div>
 </div>
-</div>
+</section>
 {{/each}}

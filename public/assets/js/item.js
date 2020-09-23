@@ -33,25 +33,25 @@ function updateCart(id,quantity){
 
 function removeCartItem(id){
     $.ajax({
-        url: '/cart',
+        url: '/giohang',
         type: 'DELETE',
         data: {id},
         success: function(result){
             $('#cart-badge').html(result.totalQuantity);
-            $('#totalPrice').html('$'+result.totalPrice);
+            $('#totalPrice').html(result.totalPrice+' Đ');
             $(`#item${id}`).remove();
         }
     });
 }
 function updateCartItem(id,quantity){
     $.ajax({
-        url: '/cart',
+        url: '/giohang',
         type: 'PUT',
         data: {id,quantity},
         success: function(result){
             $('#cart-badge').html(result.totalQuantity);
-            $('#totalPrice').html('$'+result.totalPrice);
-            $(`#price${id}`).html('$'+result.item.price);
+            $('#totalPrice').html(result.totalPrice+' Đ');
+            $(`#price${id}`).html(result.item.price+' Đ');
         }
     });
 }

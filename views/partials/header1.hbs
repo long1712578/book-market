@@ -28,10 +28,10 @@
                 </div>
             </li>
         </ul>
-        <form action="/sanpham/timkiem" class="form-inline my-2 my-lg-0">
+        {{!-- <form action="/sanpham/timkiem" class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> --}}
         <ul class="navbar-nav ml-3">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
@@ -47,11 +47,13 @@
 
                 </div>
             </li>
-            <a class="nav-link text-light" onclick="location.href='/giohang'"  aria-disabled="true">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="nav-shop_circle" id="cart-badge" style="text-size: 10px"> {{totalQuantity}}</span>
-            </a>
+            <li>
+                <a class="nav-link text-light" onclick="location.href='/giohang'"  aria-disabled="true">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a>
+            </li>
             
         </ul>
-        
+        <div class="nav-shop_circle" id="cart-badge" style="color: rgb(247, 246, 244); size: 50px;" > {{totalQuantity}}</div>
     </div>
 </nav>

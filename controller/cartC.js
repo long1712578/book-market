@@ -5,7 +5,7 @@ var order;
 router.get('/giohang',(req,res)=>{
     var cart=req.session.cart;
     res.locals.cart=cart.getCart();
-    res.render('carts');
+    res.render('cart');
 })
 router.post('/giohang',(req,res,next)=>{
     var productId=req.body.id;
@@ -16,10 +16,8 @@ router.post('/giohang',(req,res,next)=>{
     .then(product=>{
        //console.log(product);
         var cartItem=req.session.cart.add(product,productId,quantity);
-        order=cartItem;
        var str=JSON.stringify(cartItem);
        var json =  JSON.parse(str);
-       //console.log(json.item);
         res.json(json);
     })
     .catch(error=>next(error));
@@ -51,7 +49,7 @@ router.delete('/giohang/all',async(req,res)=>{
     const carts=req.session.cart.getCart();
     for (var i=0; i<lengCart;i++){
         const count=carts.items[i].quantity;
-        const id_sp=carts.items[i].item[0].id_sp;
+        const ma_so=carts.items[i].item[0].ma_so;
         const ma=carts.items[i].item[0].cuahang;
         const date=req.body.date;
         const user=req.session.user;
@@ -61,10 +59,10 @@ router.delete('/giohang/all',async(req,res)=>{
         var mUser= require('../models/accountM');
         var mShop= require('../models/shopM');
 
-        const ten=await mPro.allByProId(id_sp);
-        const tensp=ten[0].name;
+        const ten=await mPro.allByProId(ma_so);
+        const tensp=ten[0].ten_san_pham;
 
-        const giasp=ten[0].price;
+        const giasp=ten[0].gia_tien;
         const tongtien=giasp*count;
 
         const TenNguoi=await mUser.FullNameById(user);
@@ -73,7 +71,7 @@ router.delete('/giohang/all',async(req,res)=>{
         const diachi=DiaChi[0].f_Address;
         const tenShop=await mShop.nameShopByMaShop(ma);
         const shop=tenShop[0].TenCuaHang;
-        const ps1=await mPro.insertHistory(id_sp,count,date,user,ma);
+        const ps1=await mPro.insertHistory(ma_so,count,date,user,ma);
         const ps2=await mPro.insertBill(tensp,tennguoi,count,tongtien,date,diachi,shop);
         //const ps=mPro.updateQuantity(id_sp,count);
     }
